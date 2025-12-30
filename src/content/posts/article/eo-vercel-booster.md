@@ -1,10 +1,10 @@
 ---
-title: 技术分享|使用 EdgeOne 加速 Vercel
+title: 技术分享 | 使用 EdgeOne 加速 Vercel
 description: 用 EdgeOne 加速 Vercel 访问，仅限国内
 published: 2025-12-30
 tags: [技术分享, 博客, 教程, EdgeOne]
 category: 技术分享
-draft: true
+draft: false
 ---
 
 # 使用 EdgeOne 加速 Vercel
@@ -26,13 +26,16 @@ EdgeOne 是腾讯云出品的边缘安全加速平台，相比于传统的 CDN �
 
 这里涉及到一个关键的概念：**多租户架构（Multi-tenancy）**。你可以把 Vercel 想象成一栋巨大的共享公寓，成千上万个项目都住在同一个 IP 地址下。当请求到达 Vercel 的大门时，它必须通过请求头里的 `Host` 字段（也就是回源Host）来判断该把请求交给哪个房间。
 
-如果直接使用默认域名（xxx.vercel.app）作为回源地址和回源host，可能会导致一些奇怪的问题，比如登录状态丢失、链接跳转错误等。
+也许你会想，那我直接使用默认域名（xxx.vercel.app）作为回源地址和回源host不就好了？很遗憾，这么配置后，访问加速域名会返回525/522错误码。对此，有些解释是说，Vercel 的默认域名指向的并不是项目真实的地址，而是 Vercel cdn 节点的地址。EdgeOne 无法解析这个地址，所以返回错误。
 
 **具体步骤：**
 1.  在 Vercel 项目面板点击右上角的 `Domains`，也可以点击 `Settings -> Domains`。进入域名管理页面。
 2.  点击 `Add Domain` ，输入你的域名（如 `www.yourdomain.com`）并点击添加。
 3.  **核心步骤**：Vercel 会提供一个 CNAME 目标（格式大概是这样 `xxxxxxxxx.vercel-dns-xxx.com.`）。记录下这个 CNAME，稍后会用得着。然后，你**必须**先去你的域名服务商那里，把域名的 DNS 记录指向这个 CNAME（** com 后面的.是需要保留的**）。
 4.  **耐心等待**：当看到 Vercel 页面显示蓝色的对钩，而且域名下面显示 `Valid Configuration`，就可以继续下一步了。**只有看到这个蓝色标记，才能继续下一步。**
+
+<!-- 插入Vercel 自定义域名配置图 -->
+![Vercel 自定义域名配置](../images/vercel-custom-domain.webp)
 
 ### 配置 EdgeOne
 
@@ -44,6 +47,9 @@ EdgeOne 是腾讯云出品的边缘安全加速平台，相比于传统的 CDN �
 *   **源站地址**：填入 Vercel 提供的 CNAME 地址（即刚才记录的 `xxxxxxxxx.vercel-dns-xxx.com.`，这次不需要包含最后的.）。
 *   **回源协议**：**必须强制 HTTPS**。Vercel 出于安全考虑，不接受 80 端口的非加密回源，如果选了 HTTP，你会看到 502 错误。
 *   **回源 Host**：填入你在 Vercel 验证通过的那个自定义域名。这是告诉 Vercel “我要找哪个项目”的关键。
+
+![EdgeOne 配置回源 Host](../images/edgeone-config-host.webp)
+
 
 配置生效后，最后去 DNS 服务商那里，把域名的 CNAME 修改为 **EdgeOne 提供的CNAME**，就完成了所有的配置。EdgeOne 的加速不一定立即生效，你可以访问加速域名试试。如果一切正常，你应该能看到 Vercel 项目的内容。
 

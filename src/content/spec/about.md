@@ -1,6 +1,6 @@
 # 关于我 / About Me
 
-你好！我是 **夏叶** ，一个在数字世界中默默无闻的一片叶子。
+你好！我是 **次元の虫** ，一只在数字世界中默默无闻的虫子。
 
 ## 🛠️ 关于本站
 
@@ -11,7 +11,7 @@
 
 **🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
 
-**🏠我的博客： [https://blog.cuteleaf.cn](https://blog.cuteleaf.cn/)**
+**🏠我的博客： [https://blog.cuteleaf.cn](https://blog.m20001.cn/)**
 
 **📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
 
@@ -28,8 +28,8 @@
 
 如果你想和我交流技术问题，分享有趣的想法，或者只是想打个招呼，欢迎通过以下方式联系我：
 
-- 💻 **GitHub**: [CuteLeaf](https://github.com/CuteLeaf)
-- ✉️ **Email**: [xiaye@msn.com](mailto:xiaye@msn.com)
+- 💻 **GitHub**: [Againstthewindtofly](https://github.com/Againstthewindtofly)
+- ✉️ **Email**: [hutong10032@gmail.com](mailto:hutong10032@gmail.com)
 
 ---
 

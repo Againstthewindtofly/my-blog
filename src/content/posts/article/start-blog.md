@@ -1,10 +1,10 @@
 ---
-title: 技术分享|在2025年搭建个人博客
+title: 技术分享 | 在2025年搭建个人博客
 description: 赶在2025的尾巴，终于搭建起了个人博客
 published: 2025-12-30
 tags: [技术分享, 博客, 教程, Astro, Firefly]
 category: 技术分享
-draft: true
+draft: false
 ---
 
 之前就有想过搭建一个个人博客，但后面由于种种原因没有施行。选择使用笔记来记录，其实就是太懒了...因为我希望能够完全拥有对笔记所有权利，所以选择了本地优先的[思源笔记](https://b3log.org/siyuan/)。这导致想要分享笔记时就会非常麻烦。
@@ -52,7 +52,7 @@ Firefly 的配置非常直观，大部分个性化设置都集中在 `src/config
 
 - **`siteConfig.ts`**：站点基础设置，包括网站标题、语言（如 `zh_CN`）、主题色以及是否开启某些特性。
 - **`profileConfig.ts`**：个人资料设置，你可以在这里配置头像、昵称、个人简介以及社交媒体链接。
-- **`navConfig.ts`**：导航栏菜单项的配置。
+- **`navBarConfig.ts`**：导航栏菜单项的配置。
 - **`commentConfig.ts`**：评论系统配置，支持 [Waline](https://waline.js.org/)、[Giscus](https://giscus.app/)、[Twikoo](https://twikoo.js.org/) 等多种主流方案。
 - **`footerConfig.ts`** & **`FooterConfig.html`**：用于自定义页脚文本或注入自定义 HTML 内容。
 - **`announcementConfig.ts`**：配置站点顶部的公告栏。

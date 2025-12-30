@@ -42,8 +42,8 @@ export const siteConfig: SiteConfig = {
 	// { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
 	navbarLogo: {
 		type: "image",
-		value: "/assets/images/LiuYingPure3.svg",
-		alt: "🍀",
+		value: "/assets/images/nav-logo.png",
+		alt: "nav logo",
 	},
 	navbarTitle: "脑洞次元", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
 	navbarWidthFull: false, // 全宽导航栏，导航栏是否占满屏幕宽度，true：占满，false：不占满
@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
 
 	// bangumi配置
 	bangumi: {
-		userId: "1163581", // 在此处设置你的Bangumi用户ID
+		userId: "", // 在此处设置你的Bangumi用户ID
 	},
 
 	// 文章页底部的"上次编辑时间"卡片开关
@@ -68,9 +68,9 @@ export const siteConfig: SiteConfig = {
 	// 页面开关配置 - 控制特定页面的访问权限，设为false会返回404
 	// bangumi的数据为编译时获取的，所以不是实时数据，请配置bangumi.userId
 	pages: {
-		sponsor: true, // 赞助页面开关
+		sponsor: false, // 赞助页面开关
 		guestbook: true, // 留言板页面开关，需要配置评论系统
-		bangumi: true, // 番组计划页面开关，含追番和游戏，dev调试时只获取一页数据，build才会获取全部数据
+		bangumi: false, // 番组计划页面开关，含追番和游戏，dev调试时只获取一页数据，build才会获取全部数据
 	},
 
 	// 文章列表布局配置
