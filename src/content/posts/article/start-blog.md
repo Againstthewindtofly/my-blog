@@ -2,7 +2,7 @@
 title: 技术分享|在2025年搭建个人博客
 description: 赶在2025的尾巴，终于搭建起了个人博客
 published: 2025-12-30
-tags: [技术分享, 博客, Astro, Firefly]
+tags: [技术分享, 博客, 教程, Astro, Firefly]
 category: 技术分享
 draft: true
 ---
@@ -68,7 +68,7 @@ Firefly 的配置非常直观，大部分个性化设置都集中在 `src/config
 3. **自动识别**：Vercel 会自动检测到这是 Astro 项目并预设好构建配置。
 4. **完成发布**：点击 "Deploy" 即可完成部署。
 
-未来我也许会尝试部署到 [EdgeOne Pages](https://edgeone.ai/products/pages) 以优化国内访问速度。但是我测试 Vercel 绑定自定义域名后在国内的访问表现也相当不错。
+未来我也许会尝试部署到 [EdgeOne Pages](https://edgeone.ai/products/pages) 以优化国内访问速度。但是我测试 Vercel 绑定自定义域名后在国内的访问表现也可以。
 
 ## 尾声
 到这里，我的博客就上线了，感谢你的浏览~
